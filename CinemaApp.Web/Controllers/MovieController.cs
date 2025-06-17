@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CinemaApp.Web.Models;
 using CinemaApp.Web.Data;
+using CinemaApp.Web.ViewModels;
 
 namespace CinemaApp.Web.Controllers
 {
@@ -22,19 +23,28 @@ namespace CinemaApp.Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View();
+            return View(new MovieViewModel());
         }
 
         [HttpPost]
-        public IActionResult Create(Movie movie)
+        public IActionResult Create(MovieViewModel movieViewModel)
         {
             if (ModelState.IsValid)
             {
+                var movie = new Movie()
+                {
+                    Title = movieViewModel.Title,
+                    Genre = movieViewModel.Genre,
+                    ReleaseDate = movieViewModel.ReleaseDate,
+                    Director = movieViewModel.Director,
+                    Duration = movieViewModel.Duration,
+                    Description = movieViewModel.Description
+                };
                 _context.Movies.Add(movie);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(movie);
+            return View(movieViewModel);
         }
 
         public IActionResult Details(int Id)

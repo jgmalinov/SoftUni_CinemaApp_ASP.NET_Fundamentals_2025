@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace CinemaApp.Web.ViewModels
 {
-    public class CinemaIndexViewModel
+    public class CinemaCreateViewModel
     {
-        public int Id { get; set; }
-        [Required(ErrorMessage="Cinema name is required")]
+        [Required(ErrorMessage = "Cinema name is required")]
         [StringLength(50, ErrorMessage = "Cinema name cannot be longer than 100 characters")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Cinema location is required")]

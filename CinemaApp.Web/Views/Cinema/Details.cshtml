@@ -1,0 +1,29 @@
+﻿@model CinemaDetailsViewModel
+@{
+    ViewBag.Title = "Cinema Details";
+}
+<hr />
+
+<h2>@Model.Name - Program</h2>
+<p><strong>Location:</strong> @Model.Location</p>
+<h3>Movies:</h3>
+
+
+@if (Model.Movies.Any())
+{
+    <ul class="list-group">
+        @foreach(var movie in Model.Movies)
+        {
+            <li class="list-group-item">
+                <strong>@movie.Title</strong> <br />
+                <small>Duration: @movie.Duration minutes</small>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No movies scheduled at this cinema.</p>
+}
+
+<a asp-action="Index" class="btn btn-primary mt-3">Back to Cinemas</a>

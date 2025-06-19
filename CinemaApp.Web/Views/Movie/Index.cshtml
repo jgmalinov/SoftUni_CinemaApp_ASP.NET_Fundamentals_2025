@@ -21,6 +21,7 @@
                     <td>@movie.Duration minutes</td>
                     <td>
                         <a asp-action="Details" asp-route-id="@movie.Id" class="btn btn-info">Details</a>
+                        <a asp-action="AddToProgram" asp-route-movieId="@movie.Id" class="btn btn-primary">Add To Program</a>
                         <a asp-action="Edit" asp-route-id="@movie.Id" class="btn btn-warning">Edit</a>
                         <form asp-action="Delete" asp-route-id="@movie.Id" method="post" style="display:inline;">
                             <button type="submit" class="btn btn-danger">Delete</button>

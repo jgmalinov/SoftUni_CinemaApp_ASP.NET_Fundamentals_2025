@@ -1,0 +1,26 @@
+﻿@model AddMovieToCinemaProgramViewModel
+
+<h2>Add Movie "@Model.MovieTitle" to Cinema Program</h2>
+
+<form asp-action="AddToProgram" method="post">
+    <input type="hidden" asp-for="MovieId" />
+    <input type="hidden" asp-for="MovieTitle" />
+
+    <h3>Select Cinemas:</h3>
+
+    <div class="form-group">
+        @for (var i = 0; i < Model.Cinemas.Count; i++)
+        {
+            <div class="form-check">
+                <input type="hidden" asp-for="@Model.Cinemas[i].Id" />
+                <input type="hidden" asp-for="@Model.Cinemas[i].Name" />
+                <input type="checkbox" asp-for="@Model.Cinemas[i].IsChecked" class="form-check-input"/>
+                <table class="form-check-label">@Model.Cinemas[i].Name</table>
+            </div>
+
+        }
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </div>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Back to Movies List</a>

@@ -29,5 +29,6 @@ namespace CinemaApp.Web.ViewModels
         [Range(1, 500, ErrorMessage = "Duration must be between 1 and 500 minutes")]
         public int Duration { get; set; }
         public string Description { get; set; } = null!;
+        public string ImageUrl { get; set; } = null!;
     }
 }

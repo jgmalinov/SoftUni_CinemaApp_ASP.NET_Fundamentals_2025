@@ -38,7 +38,8 @@ namespace CinemaApp.Web.Controllers
                     ReleaseDate = movieViewModel.ReleaseDate,
                     Director = movieViewModel.Director,
                     Duration = movieViewModel.Duration,
-                    Description = movieViewModel.Description
+                    Description = movieViewModel.Description,
+                    ImageUrl = movieViewModel.ImageUrl
                 };
                 _context.Movies.Add(movie);
                 _context.SaveChanges();

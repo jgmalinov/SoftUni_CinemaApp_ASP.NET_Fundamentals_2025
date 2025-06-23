@@ -32,6 +32,11 @@
         <textarea asp-for="Description" class="form-control"></textarea>
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="ImageUrl"></label>
+        <input asp-for="ImageUrl" class="form-control" placeholder="Enter Image Url" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
     <button type="submit" class="btn btn-primary mt-2">Create Movie</button>
     <button type="reset" class="btn btn-secondary mt-2">Reset</button>
 </form>

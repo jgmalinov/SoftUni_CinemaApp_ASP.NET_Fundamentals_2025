@@ -9,6 +9,7 @@
         public DateTime ReleaseDate { get; set; }
         public string Director { get; set; }
         public int Duration { get; set; }
+        public string ImageUrl { get; set; } = null!;
         public ICollection<CinemaMovie> CinemaMovies = new List<CinemaMovie>();
 
     }
